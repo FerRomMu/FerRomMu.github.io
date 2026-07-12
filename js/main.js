@@ -255,6 +255,14 @@
   });
   document.querySelectorAll(".sec-title.glitch").forEach((el) => io.observe(el));
 
+  /* ---------------- X/Y readout tracks the cursor ---------------- */
+  const mxEl = document.getElementById("mx");
+  const myEl = document.getElementById("my");
+  window.addEventListener("mousemove", (e) => {
+    mxEl.textContent = (e.clientX / window.innerWidth).toFixed(3);
+    myEl.textContent = (e.clientY / window.innerHeight).toFixed(3);
+  });
+
   /* ---------------- clock (Buenos Aires) ---------------- */
   const fmt = new Intl.DateTimeFormat("en-GB", {
     hour: "2-digit",
