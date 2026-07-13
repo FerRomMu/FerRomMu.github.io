@@ -263,6 +263,41 @@
     myEl.textContent = (e.clientY / window.innerHeight).toFixed(3);
   });
 
+  /* ---------------- experience project cards ---------------- */
+  const xpStage = document.querySelector(".experience .stage");
+  const xpCard = document.getElementById("xp-card");
+  if (xpStage && xpCard) {
+    const idEl = document.getElementById("xpc-id");
+    const metaEl = document.getElementById("xpc-meta");
+    const titleEl = document.getElementById("xpc-title");
+    const descEl = document.getElementById("xpc-desc");
+    const chips = Array.from(xpStage.querySelectorAll(".pr"));
+    let activePr = null;
+
+    const showPr = (btn) => {
+      if (activePr === btn) return;
+      if (activePr) activePr.classList.remove("active");
+      activePr = btn;
+      btn.classList.add("active");
+      idEl.textContent = btn.textContent;
+      metaEl.textContent = btn.dataset.meta;
+      titleEl.textContent = btn.dataset.title;
+      descEl.textContent = btn.dataset.desc;
+      xpCard.hidden = false;
+      const max = xpStage.clientHeight - xpCard.offsetHeight;
+      const rowTop = btn.closest(".xp-row").offsetTop;
+      xpCard.style.top = Math.max(0, Math.min(rowTop, max)) + "px";
+    };
+
+    chips.forEach((btn) => {
+      btn.addEventListener("mouseenter", () => showPr(btn));
+      btn.addEventListener("focus", () => showPr(btn));
+      btn.addEventListener("click", () => showPr(btn));
+    });
+
+    if (chips.length) showPr(chips[0]);
+  }
+
   /* ---------------- clock (Buenos Aires) ---------------- */
   const fmt = new Intl.DateTimeFormat("en-GB", {
     hour: "2-digit",

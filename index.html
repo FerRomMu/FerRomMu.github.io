@@ -127,77 +127,78 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
   <!-- ============ 02 / EXPERIENCE ============ -->
   <section class="panel experience" id="experience" aria-labelledby="experience-h">
     <p class="plabel"><span class="cross">+</span>&ensp;// 02 — EXPERIENCE</p>
-    <header class="sec-head">
-      <h2 class="sec-title serif glitch" data-text="Experience" id="experience-h">Experience</h2>
-      <p class="sec-sub mono">// 2022 — present</p>
-    </header>
-    <div class="xp-row">
+    <div class="stage">
+      <header class="sec-head">
+        <h2 class="sec-title serif glitch" data-text="Experience" id="experience-h">Experience</h2>
+        <p class="sec-sub mono">// 2022 — present</p>
+      </header>
 
-      <article class="xp-col reveal">
-        <span class="tag">// 05</span>
-        <p class="xp-dates">FEB 2026 — PRESENT</p>
-        <h3 class="xp-role">AI Engineer <span class="xp-ctx">(GCP)</span></h3>
-        <p class="xp-org">ARTEAR</p>
-        <ul class="xp-list">
-          <li>Designed and implemented a multi-agent AI system to automate data queries and chart generation, improving information accessibility.</li>
-          <li>Built an interactive frontend for conversational analysis, enabling data exploration through natural language.</li>
-          <li>Built and deployed the end-to-end solution on Google Cloud Platform using Cloud Run, BigQuery, and Cloud Storage.</li>
-          <li>Implemented authentication and authorization via OAuth + IAM.</li>
-          <li>Built Looker dashboards consuming data from BigQuery.</li>
-          <li>Worked under agile methodologies using Jira and Confluence.</li>
-        </ul>
-      </article>
+      <div class="xp-index">
+        <div class="xp-cols mono" aria-hidden="true">
+          <span>NO.</span><span>ORG</span><span>ROLE</span><span>SPAN</span><span>PROJECTS</span>
+        </div>
+        <ol class="xp-rows">
+          <li class="xp-row reveal">
+            <span class="xp-no">05</span>
+            <span class="xp-org">Artear</span>
+            <span class="xp-role">AI Engineer <span class="xp-ctx">(GCP)</span></span>
+            <span class="xp-span">2026 —</span>
+            <span class="xp-prs">
+              <button type="button" class="pr" data-meta="ARTEAR · FEB 2026 — PRESENT" data-title="Multi-agent analyst" data-desc="Multi-agent system turning natural-language questions into data queries and charts — on Cloud Run, BigQuery and Cloud Storage, secured with OAuth + IAM.">PR-010</button>
+              <button type="button" class="pr" data-meta="ARTEAR · FEB 2026 — PRESENT" data-title="Conversational frontend" data-desc="Interactive interface for exploring data in natural language, no SQL required.">PR-011</button>
+              <button type="button" class="pr" data-meta="ARTEAR · FEB 2026 — PRESENT" data-title="KPI dashboards" data-desc="Looker dashboards consuming BigQuery models for daily decision-making.">PR-012</button>
+            </span>
+          </li>
+          <li class="xp-row reveal">
+            <span class="xp-no">04</span>
+            <span class="xp-org">Practia Global</span>
+            <span class="xp-role">Data Scientist Ssr / AI Engineer</span>
+            <span class="xp-span">2024 — 26</span>
+            <span class="xp-prs">
+              <button type="button" class="pr" data-meta="PRACTIA GLOBAL · NOV 2024 — JAN 2026" data-title="Auto-documentation engine" data-desc="LLM application that writes technical documentation automatically — analysis time cut from a week to about an hour of validation.">PR-007</button>
+              <button type="button" class="pr" data-meta="PRACTIA GLOBAL · NOV 2024 — JAN 2026" data-title="Semantic search" data-desc="Semantic search across unstructured text and video: OCR, language models and vector databases.">PR-008</button>
+              <button type="button" class="pr" data-meta="PRACTIA GLOBAL · NOV 2024 — JAN 2026" data-title="Context-aware chatbots" data-desc="Backend services for chatbots grounded in business-specific context, deployed on Azure.">PR-009</button>
+            </span>
+          </li>
+          <li class="xp-row reveal">
+            <span class="xp-no">03</span>
+            <span class="xp-org">Univ. Favaloro</span>
+            <span class="xp-role">University Professor</span>
+            <span class="xp-span">2025</span>
+            <span class="xp-prs">
+              <button type="button" class="pr" data-meta="UNIVERSIDAD DE FAVALORO · JAN 2025 — JUL 2025" data-title="Programming Lab I" data-desc="Design and teaching of an object-oriented programming course.">PR-006</button>
+            </span>
+          </li>
+          <li class="xp-row reveal">
+            <span class="xp-no">02</span>
+            <span class="xp-org">Practia Global</span>
+            <span class="xp-role">Data Scientist Jr.</span>
+            <span class="xp-span">2023 — 24</span>
+            <span class="xp-prs">
+              <button type="button" class="pr" data-meta="PRACTIA GLOBAL · APR 2023 — NOV 2024" data-title="Churn &amp; classification" data-desc="Machine-learning models for churn prediction and data &amp; image classification.">PR-002</button>
+              <button type="button" class="pr" data-meta="PRACTIA GLOBAL · APR 2023 — NOV 2024" data-title="Vision detection" data-desc="Computer-vision pipelines for object and anomaly detection.">PR-003</button>
+              <button type="button" class="pr" data-meta="PRACTIA GLOBAL · APR 2023 — NOV 2024" data-title="Video intelligence" data-desc="Video processing chain: transcription, summarization, translation and speech synthesis.">PR-004</button>
+              <button type="button" class="pr" data-meta="PRACTIA GLOBAL · APR 2023 — NOV 2024" data-title="Voice bot" data-desc="Digital assistant with generated voice.">PR-005</button>
+            </span>
+          </li>
+          <li class="xp-row reveal">
+            <span class="xp-no">01</span>
+            <span class="xp-org">Uqbar</span>
+            <span class="xp-role">TypeScript Developer</span>
+            <span class="xp-span">2022</span>
+            <span class="xp-prs">
+              <button type="button" class="pr" data-meta="UQBAR · JUN 2022 — DEC 2022" data-title="Java → TypeScript migration" data-desc="Migration of a legacy Java codebase to TypeScript: refactors, issue burn-down and new features.">PR-001</button>
+            </span>
+          </li>
+        </ol>
+      </div>
 
-      <article class="xp-col reveal">
-        <span class="tag">// 04</span>
-        <p class="xp-dates">NOV 2024 — JAN 2026</p>
-        <h3 class="xp-role">Data Scientist Ssr / AI Engineer</h3>
-        <p class="xp-org">PRACTIA GLOBAL</p>
-        <ul class="xp-list">
-          <li>Led the technical development of an LLM-based application for automatic documentation generation, cutting analysis time from a week to about an hour of validation.</li>
-          <li>Designed and implemented semantic search and unstructured data processing solutions (text and video).</li>
-          <li>Built backend services for chatbots and business-context-specific applications.</li>
-          <li>Implemented pipelines combining OCR, language models, and vector databases.</li>
-          <li>Managed Azure deployments, ensuring infrastructure best practices.</li>
-        </ul>
-      </article>
-
-      <article class="xp-col reveal">
-        <span class="tag">// 03</span>
-        <p class="xp-dates">JAN 2025 — JUL 2025</p>
-        <h3 class="xp-role">University Professor</h3>
-        <p class="xp-org">UNIVERSIDAD DE FAVALORO</p>
-        <ul class="xp-list">
-          <li>Taught Programming Lab I, focused on object-oriented programming.</li>
-        </ul>
-      </article>
-
-      <article class="xp-col reveal">
-        <span class="tag">// 02</span>
-        <p class="xp-dates">APR 2023 — NOV 2024</p>
-        <h3 class="xp-role">Data Scientist Jr.</h3>
-        <p class="xp-org">PRACTIA GLOBAL</p>
-        <ul class="xp-list">
-          <li>Developed machine learning models for prediction (churn) and data/image classification.</li>
-          <li>Implemented computer vision solutions for object and anomaly detection.</li>
-          <li>Built video processing pipelines with transcription, summarization, translation, and speech synthesis.</li>
-          <li>Generated indicators and analysis to support decision-making.</li>
-          <li>Contributed to a digital bot with voice generation.</li>
-        </ul>
-      </article>
-
-      <article class="xp-col reveal">
-        <span class="tag">// 01</span>
-        <p class="xp-dates">JUN 2022 — DEC 2022</p>
-        <h3 class="xp-role">TypeScript Developer</h3>
-        <p class="xp-org">UQBAR</p>
-        <ul class="xp-list">
-          <li>Migrated legacy code from Java to TypeScript.</li>
-          <li>Refactored code and resolved open issues.</li>
-          <li>Implemented new features.</li>
-        </ul>
-      </article>
-
+      <aside class="xp-card" id="xp-card" hidden aria-live="polite">
+        <p class="xp-card-id mono"><span id="xpc-id"></span><span id="xpc-meta"></span></p>
+        <div class="xp-card-img" aria-hidden="true"><span>IMG — PENDING</span></div>
+        <h3 class="xp-card-title" id="xpc-title"></h3>
+        <p class="xp-card-desc" id="xpc-desc"></p>
+      </aside>
     </div>
   </section>
 
@@ -236,6 +237,7 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
   <!-- ============ 04 / EDUCATION ============ -->
   <section class="panel education" id="education" aria-labelledby="education-h">
     <p class="plabel"><span class="cross">+</span>&ensp;// 04 — EDUCATION</p>
+    <div class="stage">
     <header class="sec-head">
       <h2 class="sec-title serif glitch" data-text="Education" id="education-h">Education</h2>
       <p class="sec-sub mono">// formal training</p>
@@ -253,11 +255,13 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- ============ 05 / CONTACT ============ -->
   <section class="panel contact" id="contact" aria-labelledby="contact-h">
     <p class="plabel"><span class="cross">+</span>&ensp;// 05 — CONTACT</p>
+    <div class="stage">
     <div class="contact-body">
       <h2 class="sec-title serif glitch" data-text="Say hello." id="contact-h">Say hello.</h2>
       <p class="sec-sub mono reveal">// no agents involved — just email</p>
@@ -280,6 +284,7 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
         <span>FERNANDO ROMERO</span>
         <span>EOF&ensp;//&ensp;POS 1.000</span>
       </div>
+    </div>
     </div>
     <span class="corner corner-br" aria-hidden="true">+</span>
   </section>
