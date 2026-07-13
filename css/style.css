@@ -132,6 +132,10 @@ body::after {
   background: linear-gradient(to bottom, var(--paper) 62%, rgba(236, 232, 224, 0));
 }
 
+.bar-left a {
+  text-decoration: none;
+}
+
 .bar-nav { justify-self: center; display: flex; gap: var(--u4); }
 
 .bar-nav a {
@@ -201,7 +205,7 @@ body::after {
 .hero { cursor: crosshair; }
 
 /* staged panels: full-viewport flex centerers for their stage */
-.hero, .experience, .skills, .education, .contact {
+.hero, .profile, .experience, .skills, .education, .contact {
   width: 100vw;
   padding: 0;
   display: flex;
@@ -390,16 +394,10 @@ body.js .reveal.in { opacity: 1; transform: none; }
 
 /* ============================== profile */
 
-.profile {
-  width: max-content;
-  display: flex;
-  align-items: center;
-}
-
 .profile-body { max-width: 62ch; }
 
 .lede {
-  font-size: clamp(24px, 2.3vw, 38px);
+  font-size: 30px;
   font-weight: 340;
   line-height: 1.42;
   letter-spacing: -0.005em;
