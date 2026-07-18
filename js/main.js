@@ -295,6 +295,7 @@
     const tipDesc = document.getElementById("prt-desc");
 
     const showTip = (btn) => {
+      if (horizontal()) return; /* desktop keeps the aside only */
       tipTitle.textContent = btn.dataset.title;
       tipDesc.textContent = btn.dataset.desc;
       tip.hidden = false;
@@ -318,6 +319,7 @@
 
     window.addEventListener("scroll", hideTip, { passive: true });
     window.addEventListener("wheel", hideTip, { passive: true });
+    mqMobile.addEventListener("change", hideTip);
     window.addEventListener("pointerdown", (e) => {
       if (!(e.target instanceof Element && e.target.closest(".pr"))) hideTip();
     });

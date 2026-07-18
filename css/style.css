@@ -304,7 +304,6 @@ body::after {
   border-bottom: 1px solid var(--ink);
   padding-bottom: 6px;
 }
-.alias-name .u { text-decoration: underline; text-underline-offset: 4px; }
 .alias-sub { margin-top: 8px; font-size: 11px; letter-spacing: 0.12em; color: var(--muted); }
 .alias-role { margin-top: var(--u3); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 
@@ -812,7 +811,7 @@ body[data-mode="vertical"] .skills .sec-head { margin-bottom: var(--u5); }
 body[data-mode="vertical"] .xp-cols { display: none; }
 body[data-mode="vertical"] .xp-index { width: auto; }
 body[data-mode="vertical"] .xp-row { grid-template-columns: 1fr; row-gap: 6px; }
-body[data-mode="vertical"] .xp-card { position: static; width: auto; margin-top: var(--u4); }
+body[data-mode="vertical"] .xp-card { display: none; }
 
 body[data-mode="vertical"] .skills-row { flex-direction: column; gap: var(--u5); }
 body[data-mode="vertical"] .spec { width: 100%; }
