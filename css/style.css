@@ -161,6 +161,8 @@ body::after {
 
 .bar-right { justify-self: end; display: inline-flex; align-items: center; gap: 0.5em; white-space: nowrap; }
 
+#delta b { font-weight: 600; }
+
 .bar-dot {
   width: 8px; height: 8px;
   border-radius: 50%;

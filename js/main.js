@@ -338,6 +338,14 @@
   tick();
   setInterval(tick, 30000);
 
+  /* Δ between my time (GMT-3, AR has no DST) and the visitor's */
+  const deltaEl = document.getElementById("delta");
+  const ahead = new Date().getTimezoneOffset() / 60 - 3;
+  const abs = Math.abs(ahead);
+  deltaEl.innerHTML = `<b>Δ</b>${ahead === 0 ? "0" : (ahead > 0 ? "+" : "−") + abs}H`;
+  document.querySelector(".bar-right").title =
+    ahead === 0 ? "We're in the same time zone" : `I'm ${abs}h ${ahead > 0 ? "ahead of" : "behind"} you`;
+
   /* ---------------- mode switching ---------------- */
   function setMode() {
     document.body.dataset.mode = horizontal() ? "horizontal" : "vertical";
