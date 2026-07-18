@@ -289,10 +289,37 @@
       xpCard.style.top = Math.max(0, Math.min(rowTop, max)) + "px";
     };
 
+    /* mini floating tip near the chip (desktop + mobile) */
+    const tip = document.getElementById("pr-tip");
+    const tipTitle = document.getElementById("prt-title");
+    const tipDesc = document.getElementById("prt-desc");
+
+    const showTip = (btn) => {
+      tipTitle.textContent = btn.dataset.title;
+      tipDesc.textContent = btn.dataset.desc;
+      tip.hidden = false;
+      const r = btn.getBoundingClientRect();
+      const x = Math.max(8, Math.min(r.left + r.width / 2 - tip.offsetWidth / 2,
+                                     window.innerWidth - tip.offsetWidth - 8));
+      let y = r.top - tip.offsetHeight - 10;
+      if (y < 64) y = r.bottom + 10; /* no room above the bar → below the chip */
+      tip.style.left = x + "px";
+      tip.style.top = y + "px";
+    };
+    const hideTip = () => { tip.hidden = true; };
+
     chips.forEach((btn) => {
-      btn.addEventListener("mouseenter", () => showPr(btn));
-      btn.addEventListener("focus", () => showPr(btn));
-      btn.addEventListener("click", () => showPr(btn));
+      btn.addEventListener("mouseenter", () => { showPr(btn); showTip(btn); });
+      btn.addEventListener("mouseleave", hideTip);
+      btn.addEventListener("focus", () => { showPr(btn); showTip(btn); });
+      btn.addEventListener("blur", hideTip);
+      btn.addEventListener("click", () => { showPr(btn); showTip(btn); });
+    });
+
+    window.addEventListener("scroll", hideTip, { passive: true });
+    window.addEventListener("wheel", hideTip, { passive: true });
+    window.addEventListener("pointerdown", (e) => {
+      if (!(e.target instanceof Element && e.target.closest(".pr"))) hideTip();
     });
 
     if (chips.length) showPr(chips[0]);

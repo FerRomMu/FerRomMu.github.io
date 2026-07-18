@@ -530,6 +530,58 @@ body.js .reveal.in { opacity: 1; transform: none; }
   font-variation-settings: "opsz" 14, "SOFT" 0, "WONK" 0;
 }
 
+/* mini floating tip for project chips */
+.pr-tip {
+  position: fixed;
+  z-index: 450;
+  width: 216px;
+  background: var(--paper);
+  border: 1px solid var(--faint);
+  padding: var(--u1);
+  pointer-events: none;
+}
+
+.pr-tip-img {
+  height: 56px;
+  border: 1px solid var(--hair);
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(to top right, transparent calc(50% - 0.5px), var(--hair) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(to bottom right, transparent calc(50% - 0.5px), var(--hair) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+}
+.pr-tip-img span {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  padding: 2px 6px;
+}
+
+.pr-tip-title {
+  margin-top: var(--u1);
+  font-size: 12.5px;
+  font-weight: 450;
+  line-height: 1.25;
+  font-variation-settings: "opsz" 40, "SOFT" 0, "WONK" 0;
+}
+
+.pr-tip-desc {
+  margin-top: 4px;
+  font-size: 10.5px;
+  font-weight: 380;
+  line-height: 1.45;
+  color: rgba(23, 21, 18, 0.82);
+  font-variation-settings: "opsz" 14, "SOFT" 0, "WONK" 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
 /* ============================== skills */
 
 .skills .stage { flex-direction: row; align-items: center; column-gap: 64px; }
