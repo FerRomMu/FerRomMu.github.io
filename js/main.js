@@ -263,6 +263,11 @@
     myEl.textContent = (e.clientY / window.innerHeight).toFixed(3);
   });
 
+  /* Z = the screen's depth axis: the visitor's devicePixelRatio */
+  const mzEl = document.getElementById("mz");
+  const setZ = () => (mzEl.textContent = window.devicePixelRatio.toFixed(3));
+  setZ();
+
   /* ---------------- experience project cards ---------------- */
   const xpStage = document.querySelector(".experience .stage");
   const xpCard = document.getElementById("xp-card");
@@ -364,7 +369,7 @@
   let resizeT = null;
   window.addEventListener("resize", () => {
     clearTimeout(resizeT);
-    resizeT = setTimeout(measure, 120);
+    resizeT = setTimeout(() => { measure(); setZ(); }, 120);
   });
 
   /* ---------------- boot ---------------- */
