@@ -715,7 +715,12 @@ body[data-mode="vertical"] .plabel { position: static; margin-bottom: var(--u4);
 body[data-mode="vertical"] .hero {
   display: flex;
   flex-direction: column;
-  gap: var(--u5);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100svh;
+  padding: calc(var(--bar-h) + var(--u4)) var(--u3) var(--u5);
+  gap: var(--u4);
   cursor: auto;
 }
 body[data-mode="vertical"] .stage { display: contents; }
@@ -723,30 +728,31 @@ body[data-mode="vertical"] .hero .abs { position: static; transform: none; }
 body[data-mode="vertical"] .vesica {
   position: static;
   transform: none;
-  width: min(88vw, 480px);
+  width: clamp(180px, 45vw, 240px);
   height: auto;
-  align-self: center;
-  order: 2;
+  order: 1;
 }
-body[data-mode="vertical"] .h-left { order: 1; }
-body[data-mode="vertical"] .h-right { order: 3; }
-body[data-mode="vertical"] .h-alias { order: 4; }
-body[data-mode="vertical"] .h-sys { order: 5; }
+body[data-mode="vertical"] .h-left { display: none; }
+body[data-mode="vertical"] .h-right { order: 2; }
+body[data-mode="vertical"] .h-alias { order: 3; }
+body[data-mode="vertical"] .h-right .tag,
+body[data-mode="vertical"] .h-right .display { display: none; }
+body[data-mode="vertical"] .tagline { margin-top: 0; }
+body[data-mode="vertical"] .tagline-dash { display: none; }
+body[data-mode="vertical"] .alias-name { margin-inline: auto; }
+body[data-mode="vertical"] .h-sys,
 body[data-mode="vertical"] .h-xyz { display: none; }
 body[data-mode="vertical"] .h-grid,
 body[data-mode="vertical"] .dots,
 body[data-mode="vertical"] .h-leader,
 body[data-mode="vertical"] .hero .corner { display: none; }
 
-body[data-mode="vertical"] .display { white-space: normal; }
-body[data-mode="vertical"] .display.serif { font-size: clamp(56px, 15vw, 96px); }
-body[data-mode="vertical"] .display.mono { font-size: clamp(26px, 7.2vw, 46px); }
-
 body[data-mode="vertical"] .sec-title { white-space: normal; font-size: clamp(52px, 13vw, 96px); }
 
 body[data-mode="vertical"] .experience,
 body[data-mode="vertical"] .skills,
 body[data-mode="vertical"] .profile,
+body[data-mode="vertical"] .education,
 body[data-mode="vertical"] .contact { display: block; }
 body[data-mode="vertical"] .experience .sec-head,
 body[data-mode="vertical"] .skills .sec-head { margin-bottom: var(--u5); }
@@ -765,7 +771,7 @@ body[data-mode="vertical"] .contact-cols { flex-direction: column; gap: var(--u4
 body[data-mode="vertical"] .contact-end { margin-top: var(--u6); flex-direction: column; gap: var(--u2); }
 body[data-mode="vertical"] .contact .corner { display: none; }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .bar { grid-template-columns: 1fr auto; padding: 0 var(--u3); }
   .bar-nav { display: none; }
 }
