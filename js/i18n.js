@@ -65,8 +65,8 @@
 
     "xt-education": "Educación",
     "xs-education": "// formación académica",
-    "degree": "Licenciatura en Informática",
-    "edu-org": "UNIVERSIDAD NACIONAL DE QUILMES · 2019 — PRESENTE",
+    "degree": "Informática",
+    "edu-org": "UNIVERSIDAD NACIONAL DE QUILMES · 2019 — 2026",
     "langs-label": "IDIOMAS",
     "lang-native": "// nativo",
 
