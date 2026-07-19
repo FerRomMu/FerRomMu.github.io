@@ -20,11 +20,11 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
 <header class="bar">
   <div class="bar-left"><a href="" data-goto="#top">Fernando Romero</a></div>
   <nav class="bar-nav" aria-label="Sections">
-    <a href="#profile" data-goto="profile">Profile</a>
-    <a href="#experience" data-goto="experience">Experience</a>
-    <a href="#skills" data-goto="skills">Skills</a>
-    <a href="#education" data-goto="education">Education</a>
-    <a href="#contact" data-goto="contact">Contact</a>
+    <a href="#profile" data-goto="profile" data-i18n="nav-profile">Profile</a>
+    <a href="#experience" data-goto="experience" data-i18n="nav-experience">Experience</a>
+    <a href="#skills" data-goto="skills" data-i18n="nav-skills">Skills</a>
+    <a href="#education" data-goto="education" data-i18n="nav-education">Education</a>
+    <a href="#contact" data-goto="contact" data-i18n="nav-contact">Contact</a>
   </nav>
   <div class="bar-right"><span>BUE</span><span id="clock">--:--</span><span aria-hidden="true">·</span><span id="delta"></span><span class="bar-dot" aria-hidden="true"></span></div>
 </header>
@@ -74,15 +74,15 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
 
     <div class="h-left abs">
       <span class="tag">// 01</span>
-      <h1 class="display serif glitch" data-text="Software">Software</h1>
-      <p class="display mono glitch" data-text="development">development</p>
+      <h1 class="display serif glitch" data-text="Software" data-i18n="d-soft">Software</h1>
+      <p class="display mono glitch" data-text="development" data-i18n="d-dev">development</p>
     </div>
 
     <div class="h-right abs">
       <span class="tag">// 02</span>
-      <p class="display serif glitch" data-text="Data">Data</p>
-      <p class="display mono glitch" data-text="science">science</p>
-      <p class="tagline">Agents can do a lot.<br>I make them do what matters.</p>
+      <p class="display serif glitch" data-text="Data" data-i18n="d-data">Data</p>
+      <p class="display mono glitch" data-text="science" data-i18n="d-sci">science</p>
+      <p class="tagline" data-i18n="tagline">Agents can do a lot.<br>I make them do what matters.</p>
       <span class="tagline-dash" aria-hidden="true">–</span>
     </div>
 
@@ -116,28 +116,28 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
 
   <!-- ============ 01 / PROFILE ============ -->
   <section class="panel profile" id="profile" aria-labelledby="profile-h">
-    <p class="plabel"><span class="cross">+</span>&ensp;// 01 — PROFILE</p>
-    <h2 class="visually-hidden" id="profile-h">Profile</h2>
+    <p class="plabel"><span class="cross">+</span>&ensp;<span data-i18n="plabel-01">// 01 — PROFILE</span></p>
+    <h2 class="visually-hidden" id="profile-h" data-i18n="ph-profile">Profile</h2>
     <div class="stage">
     <div class="profile-body">
-      <p class="lede reveal">Building products that work harder, so people don't have to. I combine backend engineering, cloud infrastructure, and AI to create scalable, intelligent software.</p>
-      <p class="mono-note reveal">BACKEND&ensp;·&ensp;CLOUD&ensp;·&ensp;LLM-BASED INTERFACES</p>
+      <p class="lede reveal" data-i18n="lede">Building products that work harder, so people don't have to. I combine backend engineering, cloud infrastructure, and AI to create scalable, intelligent software.</p>
+      <p class="mono-note reveal" data-i18n="profile-note">BACKEND&ensp;·&ensp;CLOUD&ensp;·&ensp;LLM-BASED INTERFACES</p>
     </div>
     </div>
   </section>
 
   <!-- ============ 02 / EXPERIENCE ============ -->
   <section class="panel experience" id="experience" aria-labelledby="experience-h">
-    <p class="plabel"><span class="cross">+</span>&ensp;// 02 — EXPERIENCE</p>
+    <p class="plabel"><span class="cross">+</span>&ensp;<span data-i18n="plabel-02">// 02 — EXPERIENCE</span></p>
     <div class="stage">
       <header class="sec-head">
-        <h2 class="sec-title serif glitch" data-text="Experience" id="experience-h">Experience</h2>
-        <p class="sec-sub mono">// 2022 — present</p>
+        <h2 class="sec-title serif glitch" data-text="Experience" id="experience-h" data-i18n="xt-experience">Experience</h2>
+        <p class="sec-sub mono" data-i18n="xs-experience">// 2022 — present</p>
       </header>
 
       <div class="xp-index">
         <div class="xp-cols mono" aria-hidden="true">
-          <span>NO.</span><span>ORG</span><span>ROLE</span><span>SPAN</span><span>PROJECTS</span>
+          <span data-i18n="col-no">NO.</span><span>ORG</span><span data-i18n="col-role">ROLE</span><span data-i18n="col-span">SPAN</span><span data-i18n="col-prs">PROJECTS</span>
         </div>
         <ol class="xp-rows">
           <li class="xp-row reveal">
@@ -166,7 +166,7 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
           <li class="xp-row reveal">
             <span class="xp-no">03</span>
             <span class="xp-org">Univ. Favaloro</span>
-            <span class="xp-role">University Professor</span>
+            <span class="xp-role" data-i18n="role-professor">University Professor</span>
             <span class="xp-span">2025</span>
             <span class="xp-prs">
               <button type="button" class="pr" data-meta="UNIVERSIDAD DE FAVALORO · JAN 2025 — JUL 2025" data-title="Programming Lab I" data-noimg data-desc="Design and teaching of an object-oriented programming course.">PR-005</button>
@@ -186,7 +186,7 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
           <li class="xp-row reveal">
             <span class="xp-no">01</span>
             <span class="xp-org">Uqbar</span>
-            <span class="xp-role">TypeScript Developer</span>
+            <span class="xp-role" data-i18n="role-ts">TypeScript Developer</span>
             <span class="xp-span">2022</span>
             <span class="xp-prs">
               <button type="button" class="pr" data-meta="UQBAR · JUN 2022 — DEC 2022" data-title="Java → TypeScript migration" data-img="img/wollok.webp" data-desc="Early-career contribution to Wollok, the open-source language Argentine universities use to teach OOP — porting legacy Java code to the new TypeScript stack and fixing broken behavior along the way.">PR-001</button>
@@ -194,35 +194,35 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
           </li>
         </ol>
       </div>
-      <p class="img-note mono-note">// project images are AI-generated representations — the real client products are confidential</p>
+      <p class="img-note mono-note" data-i18n="img-note">// project images are AI-generated representations — the real client products are confidential</p>
 
       <aside class="xp-card" id="xp-card" hidden aria-live="polite">
         <p class="xp-card-id mono"><span id="xpc-id"></span><span id="xpc-meta"></span></p>
-        <div class="xp-card-img" aria-hidden="true"><img id="xpc-img" alt="" hidden><span>IMG — PENDING</span></div>
+        <div class="xp-card-img" aria-hidden="true"><img id="xpc-img" alt="" hidden><span data-i18n="img-pending">IMG — PENDING</span></div>
         <h3 class="xp-card-title" id="xpc-title"></h3>
         <p class="xp-card-desc" id="xpc-desc"></p>
-        <a class="xp-card-link mono" id="xpc-link" target="_blank" rel="noopener" hidden>READ THE PAPER ⟶</a>
+        <a class="xp-card-link mono" id="xpc-link" target="_blank" rel="noopener" hidden data-i18n="card-link">READ THE PAPER ⟶</a>
       </aside>
     </div>
   </section>
 
   <!-- ============ 03 / SKILLS ============ -->
   <section class="panel skills" id="skills" aria-labelledby="skills-h">
-    <p class="plabel"><span class="cross">+</span>&ensp;// 03 — SKILLS</p>
+    <p class="plabel"><span class="cross">+</span>&ensp;<span data-i18n="plabel-03">// 03 — SKILLS</span></p>
     <div class="stage">
     <header class="sec-head">
-      <h2 class="sec-title serif glitch" data-text="Skills" id="skills-h">Skills</h2>
-      <p class="sec-sub mono">// toolchain</p>
+      <h2 class="sec-title serif glitch" data-text="Skills" id="skills-h" data-i18n="xt-skills">Skills</h2>
+      <p class="sec-sub mono" data-i18n="xs-skills">// toolchain</p>
     </header>
     <div class="skills-row">
       <dl class="spec reveal">
-        <div class="spec-row"><dt>LANGUAGES</dt><dd>Python · TypeScript · Kotlin</dd></div>
+        <div class="spec-row"><dt data-i18n="dt-langs">LANGUAGES</dt><dd>Python · TypeScript · Kotlin</dd></div>
         <div class="spec-row"><dt>BACKEND &amp; APIS</dt><dd>FastAPI · Flask · Spring Boot · REST API design &amp; implementation</dd></div>
-        <div class="spec-row"><dt>APPLIED AI</dt><dd>LLMs · Multi-agent systems · RAG · Embeddings · Prompt Engineering · LangChain · ADK</dd></div>
-        <div class="spec-row"><dt>DATA &amp; ML</dt><dd>NumPy · Pandas · Scikit-learn · TensorFlow · data processing · prediction &amp; classification models</dd></div>
-        <div class="spec-row"><dt>DATABASES</dt><dd>PostgreSQL · MySQL · FAISS · ChromaDB · BigQuery</dd></div>
+        <div class="spec-row"><dt data-i18n="dt-ai">APPLIED AI</dt><dd>LLMs · Multi-agent systems · RAG · Embeddings · Prompt Engineering · LangChain · ADK</dd></div>
+        <div class="spec-row"><dt data-i18n="dt-data">DATA &amp; ML</dt><dd>NumPy · Pandas · Scikit-learn · TensorFlow · data processing · prediction &amp; classification models</dd></div>
+        <div class="spec-row"><dt data-i18n="dt-db">DATABASES</dt><dd>PostgreSQL · MySQL · FAISS · ChromaDB · BigQuery</dd></div>
         <div class="spec-row"><dt>CLOUD &amp; INFRA</dt><dd>Google Cloud Platform · Cloud Run · BigQuery · Cloud Storage · Vertex AI · Microsoft Azure · Docker</dd></div>
-        <div class="spec-row"><dt>DEVOPS &amp; METHOD</dt><dd>Git · GitHub Actions · Scrum · Kanban</dd></div>
+        <div class="spec-row"><dt data-i18n="dt-devops">DEVOPS &amp; METHOD</dt><dd>Git · GitHub Actions · Scrum · Kanban</dd></div>
       </dl>
       <aside class="skills-side reveal" aria-hidden="true">
         <svg class="mini-vesica" viewBox="0 0 120 72" focusable="false">
@@ -242,21 +242,21 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
 
   <!-- ============ 04 / EDUCATION ============ -->
   <section class="panel education" id="education" aria-labelledby="education-h">
-    <p class="plabel"><span class="cross">+</span>&ensp;// 04 — EDUCATION</p>
+    <p class="plabel"><span class="cross">+</span>&ensp;<span data-i18n="plabel-04">// 04 — EDUCATION</span></p>
     <div class="stage">
     <header class="sec-head">
-      <h2 class="sec-title serif glitch" data-text="Education" id="education-h">Education</h2>
-      <p class="sec-sub mono">// formal training</p>
+      <h2 class="sec-title serif glitch" data-text="Education" id="education-h" data-i18n="xt-education">Education</h2>
+      <p class="sec-sub mono" data-i18n="xs-education">// formal training</p>
     </header>
     <div class="edu-body">
       <div class="reveal">
-        <h3 class="edu-degree">Bachelor's in Computer Science</h3>
-        <p class="edu-org mono">UNIVERSIDAD NACIONAL DE QUILMES&ensp;·&ensp;2019 — PRESENT</p>
+        <h3 class="edu-degree" data-i18n="degree">Bachelor's in Computer Science</h3>
+        <p class="edu-org mono" data-i18n="edu-org">UNIVERSIDAD NACIONAL DE QUILMES&ensp;·&ensp;2019 — PRESENT</p>
       </div>
       <div class="edu-langs reveal">
-        <p class="mono-note">LANGUAGES</p>
+        <p class="mono-note" data-i18n="langs-label">LANGUAGES</p>
         <div class="readout">
-          <span>ES</span><span>1.000&ensp;<em>// native</em></span>
+          <span>ES</span><span>1.000&ensp;<em data-i18n="lang-native">// native</em></span>
           <span>EN</span><span>0.720&ensp;<em>// B2</em></span>
         </div>
       </div>
@@ -266,12 +266,12 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
 
   <!-- ============ 05 / CONTACT ============ -->
   <section class="panel contact" id="contact" aria-labelledby="contact-h">
-    <p class="plabel"><span class="cross">+</span>&ensp;// 05 — CONTACT</p>
+    <p class="plabel"><span class="cross">+</span>&ensp;<span data-i18n="plabel-05">// 05 — CONTACT</span></p>
     <div class="stage">
     <div class="contact-body">
-      <h2 class="sec-title serif glitch" data-text="Say hello." id="contact-h">Say hello.</h2>
-      <p class="sec-sub mono reveal">// no agents involved — just email</p>
-      <a class="btn reveal" href="mailto:fer.rom.mu.work@gmail.com">CONTACT FOR WORK</a>
+      <h2 class="sec-title serif glitch" data-text="Say hello." id="contact-h" data-i18n="xt-contact">Say hello.</h2>
+      <p class="sec-sub mono reveal" data-i18n="xs-contact">// no agents involved — just email</p>
+      <a class="btn reveal" href="mailto:fer.rom.mu.work@gmail.com" data-i18n="btn-contact">CONTACT FOR WORK</a>
       <div class="contact-cols reveal">
         <div>
           <p class="cc-label">EMAIL</p>
@@ -282,7 +282,7 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
           <a href="https://linkedin.com/in/ferrommu" target="_blank" rel="noopener">linkedin.com/in/ferrommu</a>
         </div>
         <div>
-          <p class="cc-label">LOCATION</p>
+          <p class="cc-label" data-i18n="cc-location">LOCATION</p>
           <p>Buenos Aires, Argentina</p>
         </div>
       </div>
@@ -304,11 +304,12 @@ document.body.dataset.mode = matchMedia('(max-width: 900px)').matches ? 'vertica
 </div>
 <div class="hint mono" id="hint" aria-hidden="true">SCROLL <span class="hint-arrow">⟶</span></div>
 <div class="pr-tip" id="pr-tip" hidden aria-hidden="true">
-  <div class="pr-tip-img"><img id="prt-img" alt="" hidden><span>IMG — PENDING</span></div>
+  <div class="pr-tip-img"><img id="prt-img" alt="" hidden><span data-i18n="img-pending">IMG — PENDING</span></div>
   <p class="pr-tip-title" id="prt-title"></p>
   <p class="pr-tip-desc" id="prt-desc"></p>
 </div>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>

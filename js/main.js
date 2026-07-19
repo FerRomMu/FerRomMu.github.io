@@ -370,8 +370,13 @@
   const ahead = new Date().getTimezoneOffset() / 60 - 3;
   const abs = Math.abs(ahead);
   deltaEl.innerHTML = `<b>Δ</b>${ahead === 0 ? "0" : (ahead > 0 ? "+" : "−") + abs}H`;
+  const dmsg = (window.I18N && window.I18N.delta) || {
+    same: "We're in the same time zone",
+    ahead: (h) => `I'm ${h}h ahead of you`,
+    behind: (h) => `I'm ${h}h behind you`,
+  };
   document.querySelector(".bar-right").title =
-    ahead === 0 ? "We're in the same time zone" : `I'm ${abs}h ${ahead > 0 ? "ahead of" : "behind"} you`;
+    ahead === 0 ? dmsg.same : ahead > 0 ? dmsg.ahead(abs) : dmsg.behind(abs);
 
   /* ---------------- mode switching ---------------- */
   function setMode() {
