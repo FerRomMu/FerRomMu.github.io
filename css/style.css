@@ -512,7 +512,8 @@ body.js .reveal.in { opacity: 1; transform: none; }
   height: 100%;
   object-fit: cover;
 }
-.xp-card-img img[hidden], .pr-tip-img img[hidden] { display: none; }
+.xp-card-img img[hidden], .pr-tip-img img[hidden],
+.xp-card-img[hidden], .pr-tip-img[hidden] { display: none; }
 
 .xp-card-img span {
   font-family: var(--mono);
