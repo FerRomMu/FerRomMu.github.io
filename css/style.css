@@ -504,6 +504,16 @@ body.js .reveal.in { opacity: 1; transform: none; }
     linear-gradient(to top right, transparent calc(50% - 0.5px), var(--hair) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
     linear-gradient(to bottom right, transparent calc(50% - 0.5px), var(--hair) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px));
 }
+.xp-card-img { position: relative; }
+.xp-card-img img, .pr-tip-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.xp-card-img img[hidden], .pr-tip-img img[hidden] { display: none; }
+
 .xp-card-img span {
   font-family: var(--mono);
   font-size: 9px;
@@ -531,6 +541,21 @@ body.js .reveal.in { opacity: 1; transform: none; }
   font-variation-settings: "opsz" 14, "SOFT" 0, "WONK" 0;
 }
 
+.xp-card-link[hidden] { display: none; }
+
+.xp-card-link {
+  display: inline-block;
+  margin-top: var(--u2);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+}
+
+.img-note { margin-top: var(--u3); max-width: 620px; }
+
 /* mini floating tip for project chips */
 .pr-tip {
   position: fixed;
@@ -543,6 +568,7 @@ body.js .reveal.in { opacity: 1; transform: none; }
 }
 
 .pr-tip-img {
+  position: relative;
   height: 56px;
   border: 1px solid var(--hair);
   display: grid;

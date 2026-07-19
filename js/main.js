@@ -276,8 +276,21 @@
     const metaEl = document.getElementById("xpc-meta");
     const titleEl = document.getElementById("xpc-title");
     const descEl = document.getElementById("xpc-desc");
+    const linkEl = document.getElementById("xpc-link");
+    const cardImgBox = xpCard.querySelector(".xp-card-img");
     const chips = Array.from(xpStage.querySelectorAll(".pr"));
     let activePr = null;
+
+    /* fill an image slot from a chip: image, IMG-PENDING placeholder, or nothing */
+    const setImg = (box, btn) => {
+      const img = box.querySelector("img");
+      const span = box.querySelector("span");
+      const src = btn.dataset.img || "";
+      box.hidden = btn.hasAttribute("data-noimg");
+      img.hidden = !src;
+      span.hidden = !!src;
+      if (src && img.getAttribute("src") !== src) img.src = src;
+    };
 
     const showPr = (btn) => {
       if (activePr === btn) return;
@@ -288,6 +301,9 @@
       metaEl.textContent = btn.dataset.meta;
       titleEl.textContent = btn.dataset.title;
       descEl.textContent = btn.dataset.desc;
+      setImg(cardImgBox, btn);
+      linkEl.hidden = !btn.dataset.link;
+      if (btn.dataset.link) linkEl.href = btn.dataset.link;
       xpCard.hidden = false;
       const max = xpStage.clientHeight - xpCard.offsetHeight;
       const rowTop = btn.closest(".xp-row").offsetTop;
@@ -303,6 +319,7 @@
       if (horizontal()) return; /* desktop keeps the aside only */
       tipTitle.textContent = btn.dataset.title;
       tipDesc.textContent = btn.dataset.desc;
+      setImg(tip.querySelector(".pr-tip-img"), btn);
       tip.hidden = false;
       const r = btn.getBoundingClientRect();
       const x = Math.max(8, Math.min(r.left + r.width / 2 - tip.offsetWidth / 2,
@@ -330,6 +347,11 @@
     });
 
     if (chips.length) showPr(chips[0]);
+
+    /* warm the cache so cards never show a blank slot on first hover */
+    chips.forEach((btn) => {
+      if (btn.dataset.img) new Image().src = btn.dataset.img;
+    });
   }
 
   /* ---------------- clock (Buenos Aires) ---------------- */
