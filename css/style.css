@@ -161,6 +161,23 @@ body::after {
 
 .bar-right { justify-self: end; display: inline-flex; align-items: center; gap: 0.5em; white-space: nowrap; }
 
+.bar-time { display: inline-flex; align-items: center; gap: 0.5em; }
+
+.lang-toggle {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin-right: var(--u2);
+  cursor: pointer;
+  color: var(--faint);
+}
+.lang-toggle span { transition: color 0.2s ease; }
+.lang-toggle:hover span { color: var(--muted); }
+:root[lang="en"] .lt-en, :root[lang="es"] .lt-es { color: var(--ink); font-weight: 600; }
+
 #delta b { font-weight: 600; }
 
 .bar-dot {

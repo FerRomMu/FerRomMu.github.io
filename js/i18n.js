@@ -5,8 +5,19 @@
 (() => {
   "use strict";
 
-  const es = (navigator.language || "").toLowerCase().startsWith("es");
+  let stored = null;
+  try { stored = localStorage.getItem("lang"); } catch (e) {}
+  const es = stored ? stored === "es" : (navigator.language || "").toLowerCase().startsWith("es");
   window.I18N = { es };
+
+  const toggle = document.getElementById("lang-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      try { localStorage.setItem("lang", es ? "en" : "es"); } catch (e) {}
+      location.reload();
+    });
+  }
+
   if (!es) return;
 
   const t = {

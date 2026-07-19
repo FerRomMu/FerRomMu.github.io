@@ -375,7 +375,7 @@
     ahead: (h) => `I'm ${h}h ahead of you`,
     behind: (h) => `I'm ${h}h behind you`,
   };
-  document.querySelector(".bar-right").title =
+  document.querySelector(".bar-time").title =
     ahead === 0 ? dmsg.same : ahead > 0 ? dmsg.ahead(abs) : dmsg.behind(abs);
 
   /* ---------------- mode switching ---------------- */
