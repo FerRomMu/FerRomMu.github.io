@@ -196,6 +196,42 @@
     true
   );
 
+  /* ---------------- input: ruler scrub (click / drag the box) ---------------- */
+  let rulerGrab = null; /* px between the pointer and the box's left edge */
+
+  function scrubTo(clientX) {
+    const rect = ruler.getBoundingClientRect();
+    const room = rect.width - rulerBox.offsetWidth;
+    if (room <= 0) return;
+    const frac = Math.min(1, Math.max(0, (clientX - rect.left - rulerGrab) / room));
+    target = clamp(frac * max);
+    start();
+  }
+
+  ruler.addEventListener("pointerdown", (e) => {
+    if (!horizontal() || e.button !== 0) return;
+    const rect = ruler.getBoundingClientRect();
+    const boxW = rulerBox.offsetWidth;
+    const room = rect.width - boxW;
+    if (room <= 0) return;
+    e.preventDefault();
+    try { ruler.setPointerCapture(e.pointerId); } catch (err) {}
+    const boxLeft = rect.left + (max > 0 ? (pos / max) * room : 0);
+    const onBox = e.clientX >= boxLeft && e.clientX <= boxLeft + boxW;
+    rulerGrab = onBox ? e.clientX - boxLeft : boxW / 2;
+    if (!onBox) scrubTo(e.clientX);
+    hideHint();
+  });
+
+  ruler.addEventListener("pointermove", (e) => {
+    if (rulerGrab !== null) scrubTo(e.clientX);
+  });
+
+  const endScrub = () => { rulerGrab = null; };
+  ruler.addEventListener("pointerup", endScrub);
+  ruler.addEventListener("pointercancel", endScrub);
+  ruler.addEventListener("lostpointercapture", endScrub);
+
   /* ---------------- navigation ---------------- */
   function goTo(id, instant) {
     const sec = document.getElementById(id);

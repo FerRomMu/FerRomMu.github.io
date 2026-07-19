@@ -727,6 +727,7 @@ body.js .reveal.in { opacity: 1; transform: none; }
 /* ============================== fixed HUD */
 
 .ruler {
+  cursor: pointer;
   position: fixed;
   bottom: 26px;
   left: 50%;
@@ -741,6 +742,7 @@ body.js .reveal.in { opacity: 1; transform: none; }
 .ruler i { display: block; width: 1px; height: 11px; background: var(--faint); }
 .ruler i:nth-child(4n+1) { height: 12px; background: var(--muted); }
 .ruler-box {
+  cursor: grab;
   position: absolute;
   top: -4px; left: 0;
   height: 20px;
